@@ -37,5 +37,16 @@ This repo tracks my hands-on projects as I learn Linux from scratch, one project
 - VS Code with the WSL extension
 - Git & GitHub for version control
 
+## Project 4: Tame the Process Zoo - Seeing & Controlling Running Processes
+**Commands practiced:** `sleep`, `ps aux`, `grep`, `kill`, `pkill`, `top`
+
+**What I did:**
+- Started long-running background processes using `sleep 600 &` and the `&` operator
+- Used `ps aux | grep <name>` to find a specific running process and read its PID
+- Killed a process by its PID using `kill <PID>` and confirmed it stopped
+- Ran multiple background processes at once and identified each one individually by PID and command name
+- Killed a process by name instead of PID using `pkill`
+- Explored `top`, a live process monitor, and used `M`/`P` to sort by memory/CPU usage
 ## Coming up next
-- Project 4: processes, monitoring, and systemd basics
+- Project 5: TBD
+
