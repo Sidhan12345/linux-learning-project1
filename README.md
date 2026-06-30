@@ -47,6 +47,46 @@ This repo tracks my hands-on projects as I learn Linux from scratch, one project
 - Ran multiple background processes at once and identified each one individually by PID and command name
 - Killed a process by name instead of PID using `pkill`
 - Explored `top`, a live process monitor, and used `M`/`P` to sort by memory/CPU usage
-## Coming up next
-- Project 5: TBD
+
+# Project 5: Folder Backup Script
+
+A simple but robust Bash command-line tool that creates timestamped backups of any folder.
+
+## Features
+
+- Validates that a folder name was provided
+- Checks that the target folder actually exists before attempting anything
+- Creates a uniquely timestamped backup (e.g. `inbox_backup_2026-06-30_16-31-09`) so previous backups are never overwritten
+- Proper exit codes (`0` for success, `1` for failure) following standard Unix conventions
+- Built-in `--help` flag with usage instructions
+
+## Usage
+
+\`\`\`bash
+chmod +x backup.sh
+./backup.sh <folder_name>
+\`\`\`
+
+### Examples
+
+\`\`\`bash
+./backup.sh inbox
+# Backup created: inbox_backup_2026-06-30_16-31-09
+
+./backup.sh --help
+# Shows usage instructions
+
+./backup.sh nonexistent_folder
+# Hmm, I can't find a folder called nonexistent_folder
+\`\`\`
+
+## What I learned
+
+- Using positional parameters (`$1`) to accept command-line arguments
+- Conditional logic in Bash (`if`/`else`/`fi`) and the `-z` and `-d` test flags
+- Capturing command output into variables using `$(...)`
+- Building dynamic strings/filenames using variable expansion (`${var}`)
+- Proper exit codes and why they matter for scripting and automation
+- Copying directories recursively with `cp -r`
+
 
